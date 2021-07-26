@@ -58,17 +58,17 @@ function setup() {
   // windowHeight - Altura da Janela
   createCanvas(windowWidth, windowHeight);
   
-  trex = createSprite(50, 350,20,50);
+  trex = createSprite(50,400,20,50);
   trex.addAnimation("running", trex_correndo);
  trex.addAnimation("collided", trexcolide);
   
   trex.scale = 0.5;
   
-  solo = createSprite(200,350,400,20);
+  solo = createSprite(200,400,400,20);
    solo.addImage("ground",imagemdosolo);
    solo.velocityX = -4;  
   
-  soloinvisivel = createSprite(200,350,400,10);
+  soloinvisivel = createSprite(200,400,400,10);
   soloinvisivel.visible = false;
    
  grupodeobstaculos=createGroup()
@@ -173,7 +173,7 @@ if (estadojogo===jogar)  {
 
 function gerarObstaculos(){
  if (frameCount % 60 === 0){
-   var obstaculo = createSprite(400,330,10,40);
+   var obstaculo = createSprite(400,380,10,40);
   obstaculo.velocityX = -6;
     obstaculo.scale = 0.5;
       
@@ -204,12 +204,12 @@ function gerarObstaculos(){
 function gerarNuvens() {
   //escreva o código aqui para gerar as nuvens 
   if (frameCount % 60 === 0) {
-    nuvem = createSprite(600,200,40,10);
+    nuvem = createSprite(600,300,40,10);
     
   
     
     nuvem.addImage(imagemdanuvem);
-    nuvem.scale = 0.5;
+    nuvem.scale = 0.6;
     nuvem.velocityX = -3;
     
      
