@@ -53,22 +53,19 @@ function preload(){
 }
 
 function setup() {
-  
-  // windowWidth - Largura da Janela 
-  // windowHeight - Altura da Janela
   createCanvas(windowWidth, windowHeight);
   
-  trex = createSprite(50,400,20,50);
+  trex = createSprite(50,height -70,20,50);
   trex.addAnimation("running", trex_correndo);
  trex.addAnimation("collided", trexcolide);
   
   trex.scale = 0.5;
   
-  solo = createSprite(200,400,400,20);
+  solo = createSprite(200,180,400,20);
    solo.addImage("ground",imagemdosolo);
    solo.velocityX = -4;  
   
-  soloinvisivel = createSprite(200,400,400,10);
+  soloinvisivel = createSprite(width/2,height-10,width,125);
   soloinvisivel.visible = false;
    
  grupodeobstaculos=createGroup()
@@ -76,20 +73,20 @@ function setup() {
   
   
   //6 - Criar o Sprite do Game Over
-  gameover=createSprite(220,280)
+  gameover=createSprite(300,100)
   
   //8 - Adiciona a Imagem ao Sprite Criado
   gameover.addImage(gameover_image)
   
   //9 - Colocar Scala para o Game Over
-   gameover.scale=0.4
+   gameover.scale=0.5
   
   //10 - Declarar que o Game Over tera sua visibilidade falsa
    gameover.visible=false
   
-  reiniciar=createSprite(220,320)
+  reiniciar=createSprite(300,140)
   reiniciar.addImage(reiniciarimage)
-  reiniciar.scale=0.4
+  reiniciar.scale=0.5
   reiniciar.visible=false
    
 }
@@ -103,7 +100,6 @@ if (estadojogo===jogar)  {
     
     
     //saltar quando a tecla de espaço é pressionada
-  // length - COMPRIMENTO - height - ALTURA
     if((touches.length > 0 ||keyDown("space"))&& trex.y >= height -120
        ) {
        
@@ -173,7 +169,7 @@ if (estadojogo===jogar)  {
 
 function gerarObstaculos(){
  if (frameCount % 60 === 0){
-   var obstaculo = createSprite(400,380,10,40);
+   var obstaculo = createSprite(400,165,10,40);
   obstaculo.velocityX = -6;
     obstaculo.scale = 0.5;
       
@@ -204,12 +200,12 @@ function gerarObstaculos(){
 function gerarNuvens() {
   //escreva o código aqui para gerar as nuvens 
   if (frameCount % 60 === 0) {
-    nuvem = createSprite(600,300,40,10);
+    nuvem = createSprite(600,100,40,10);
     
   
     
     nuvem.addImage(imagemdanuvem);
-    nuvem.scale = 0.6;
+    nuvem.scale = 0.5;
     nuvem.velocityX = -3;
     
      
