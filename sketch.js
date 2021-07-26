@@ -53,19 +53,22 @@ function preload(){
 }
 
 function setup() {
+  
+  // windowWidth - Largura da Janela 
+  // windowHeight - Altura da Janela
   createCanvas(windowWidth, windowHeight);
   
-  trex = createSprite(50, 180,20,50);
+  trex = createSprite(50, 350,20,50);
   trex.addAnimation("running", trex_correndo);
  trex.addAnimation("collided", trexcolide);
   
   trex.scale = 0.5;
   
-  solo = createSprite(200,180,400,20);
+  solo = createSprite(200,350,400,20);
    solo.addImage("ground",imagemdosolo);
    solo.velocityX = -4;  
   
-  soloinvisivel = createSprite(200,190,400,10);
+  soloinvisivel = createSprite(200,350,400,10);
   soloinvisivel.visible = false;
    
  grupodeobstaculos=createGroup()
@@ -73,7 +76,7 @@ function setup() {
   
   
   //6 - Criar o Sprite do Game Over
-  gameover=createSprite(300,100)
+  gameover=createSprite(300,280)
   
   //8 - Adiciona a Imagem ao Sprite Criado
   gameover.addImage(gameover_image)
@@ -84,7 +87,7 @@ function setup() {
   //10 - Declarar que o Game Over tera sua visibilidade falsa
    gameover.visible=false
   
-  reiniciar=createSprite(300,140)
+  reiniciar=createSprite(300,320)
   reiniciar.addImage(reiniciarimage)
   reiniciar.scale=0.5
   reiniciar.visible=false
@@ -100,12 +103,16 @@ if (estadojogo===jogar)  {
     
     
     //saltar quando a tecla de espaço é pressionada
-    if((touches.length > 0 ||keyDown("space"))&& trex.y >= height-120) {
+  // length - COMPRIMENTO - height - ALTURA
+    if((touches.length > 0 ||keyDown("space"))&& trex.y 
+       ) {
+       touches=[]
        trex.velocityY = -13;
       //3 - Atribuir o SomSalto 
       somSalto.play()
       
-      touches=[]
+      
+      
       
   }
     
@@ -165,7 +172,7 @@ if (estadojogo===jogar)  {
 
 function gerarObstaculos(){
  if (frameCount % 60 === 0){
-   var obstaculo = createSprite(400,165,10,40);
+   var obstaculo = createSprite(400,330,10,40);
   obstaculo.velocityX = -6;
     obstaculo.scale = 0.5;
       
@@ -196,7 +203,7 @@ function gerarObstaculos(){
 function gerarNuvens() {
   //escreva o código aqui para gerar as nuvens 
   if (frameCount % 60 === 0) {
-    nuvem = createSprite(600,100,40,10);
+    nuvem = createSprite(600,200,40,10);
     
   
     
