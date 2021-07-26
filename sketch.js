@@ -61,7 +61,7 @@ function setup() {
   
   trex.scale = 0.5;
   
-  solo = createSprite(200,180,400,20);
+  solo = createSprite(200,420,400,20);
    solo.addImage("ground",imagemdosolo);
    solo.velocityX = -4;  
   
@@ -169,7 +169,7 @@ if (estadojogo===jogar)  {
 
 function gerarObstaculos(){
  if (frameCount % 60 === 0){
-   var obstaculo = createSprite(400,165,10,40);
+   var obstaculo = createSprite(400,420,10,40);
   obstaculo.velocityX = -6;
     obstaculo.scale = 0.5;
       
